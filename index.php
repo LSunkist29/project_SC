@@ -3,7 +3,7 @@ require_once('shopcar_php/config.php');
 require_once('shopcar_php/get_commodityId.php');
 ?> 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,26 @@ require_once('shopcar_php/get_commodityId.php');
     .cf_a_hover1,.cf_a_hover1:hover{
         color:black;
     }
+    .otime span {
+    display: inline-block;
+    color: #fff;
+    font-size: 8px;
+    }
+    .logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    margin-left: 3px;
+    }
+    .logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(./images/logo_mikann.png) no-repeat;
+    background-size: cover;
+    font-size: 0;
+}
 
 </style>
 <body>
@@ -61,7 +81,7 @@ require_once('shopcar_php/get_commodityId.php');
                     <li id="loginfasle" class="login_regi"><a href="shopcar_php/index_login.php">登入</a></li>
                     <li id="registerfasle" class="login_regi"><a href="shopcar_php/register.html">註冊</a></li>
                     <li class="newbox" onclick="shopcar_show('block');"><a href="javascript:;">購物車<span></span></a>
-                        <div class="shopcar_new" id="shopcar_new">new<span class="triangle"></span></div>
+                    <div class="shopcar_new" id="shopcar_new">new<span class="triangle"></span></div>
                     </li>
                     <form action="shopcar_php/settlement_query.php" method="post">
                         <div class="in_shopcar" id="in_shopcar_id">
@@ -823,7 +843,7 @@ require_once('shopcar_php/get_commodityId.php');
         <?php if($p=="shop"):?>
         <div class="w box">
             <div class="left_img">
-                <img src="images/mikannimg.png" alt="冰箱">
+                <img src="images/mikannimg.png" alt="<?php echo $datass["commodityname"]?>">
             </div>
             <div class="right_text">
                 <!-- <?php foreach($datas as $datass):?> -->

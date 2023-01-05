@@ -1,5 +1,5 @@
 //輪播圖
-//獲得左側按鈕
+//獲得左右側按鈕
 var arrow_l = document.querySelector('.left-f');
 var arrow_r = document.querySelector('.right-f');
 var focus = document.querySelector('.big-box');

@@ -300,11 +300,13 @@ function nowbuy1() {
     var commodity_Price1 = document.getElementById(" commodity_Price1");
     var commodity_quantity1 = document.getElementById("commodity_quantity1");
     var inputswitch = document.getElementById("inputswitch");
+    // var shopcar_new = document.getElementById("shopcar_new");
 
     commodity_name1.value = commodity_name.textContent;
     commodity_Price1.value = commodity_Price.textContent;
     commodity_quantity1.value = commodity_quantity.textContent;
     inputswitch.value = "1";
+    // shopcar_new.style.display = "block";
 }
 
 function nowbuy2() {
