@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登錄</title>
+</head>
+<style>
+    input {
+        outline: none;
+    }
+</style>
+<script>
+    function checkinput() {
+        var registername = document.getElementById("registername");
+        var registername_vlaue = registername.value;
+        if (registername_vlaue == "") {
+            alert("註冊名字不能空白");
+        }
+        var reg = /[0-9]|[A-z]/i;
+
+        if (!reg.test(registername_vlaue)) {
+            alert("請輸入英文加數字的註冊名字")
+            registername.value = "";
+        }
+    }
+</script>
+
+<body>
+    <form name="login" action="login.php" method="post">
+        <table>
+            <tr>
+                <td>使用者名稱</td>
+                <td>
+                    <p><input type=text name="name" autocomplete="off" required onkeyup="checkinput();"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>密 碼</td>
+                <td>
+                    <p><input type=password name="password" autocomplete="off" required></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <p><input type="submit" name="submit" value="登入"></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

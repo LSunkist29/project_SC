@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*css3盒子模型*/
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    /* 取消圖片底部有空白縫隙問題 */
+    vertical-align: middle;
+    width: 100%;
+}
+
+button {
+    /* 滑鼠樣式手指 */
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c81623;
+}
+
+button,
+input {
+    /* 字型 */
+    /* 取消輸入灰色邊框 */
+    border: 0;
+    /* 取消輸入焦點藍色邊框效果*/
+    outline: none;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    /* 字型 */
+    /* font:12px/1.5; 字型*/
+    color: #666;
+}

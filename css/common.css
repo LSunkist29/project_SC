@@ -1,0 +1,686 @@
+/* 版寬 */
+
+.w {
+    width: 1102px;
+    margin: 0 auto;
+}
+
+
+/* 向左浮動 */
+
+.fl {
+    float: left;
+}
+
+
+/* 向右浮動 */
+
+.fr {
+    float: right;
+}
+
+
+/* 清除浮動 */
+
+.clear_float {
+    clear: both;
+}
+
+
+/* header area */
+
+.header {
+    position: relative;
+    height: 105px;
+    background-color: pink;
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    background-color: skyblue;
+    margin-left: 3px;
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo_mikann.png) no-repeat;
+    background-size: cover;
+    font-size: 0;
+}
+
+.search {
+    position: absolute;
+    left: 250px;
+    top: 35px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid rgb(155, 155, 155);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search input {
+    float: left;
+    width: 454px;
+    height: 32px;
+    padding-left: 10px;
+}
+
+.search .search_button {
+    float: left;
+    width: 80px;
+    height: 34px;
+    /* background-color: darkorange; */
+    background-color: rgb(93, 94, 89);
+    font-size: 12px;
+    color: #fff;
+    border: none;
+    outline: none;
+    line-height: 34px;
+    text-align: center;
+}
+
+.usertools {
+    position: absolute;
+    right: -5px;
+    top: 33px;
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: rgb(83, 82, 82);
+}
+
+.usertools_list {
+    display: flex;
+}
+
+
+/* .usertools .usertools_list #userarea a {
+        display: none !important;
+        /* color: red; */
+
+
+/* } */
+
+.usertools_list .login_regi {
+    display: block;
+}
+
+.usertools_list li {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.usertools_list li:nth-child(3) {
+    margin-right: 8px;
+    margin-top: -2px;
+    position: relative;
+}
+
+
+/* icon_area */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?qu0dz2');
+    src: url('../fonts/icomoon.eot?qu0dz2#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?qu0dz2') format('truetype'), url('../fonts/icomoon.woff?qu0dz2') format('woff'), url('../fonts01/icomoon.svg?qu0dz2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+span {
+    font-family: 'icomoon';
+    font-size: 15px;
+}
+
+
+/* 商品列表 */
+
+.newbox {
+    position: relative;
+}
+
+.shopcar_new {
+    display: none;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    color: rgb(235, 52, 52);
+    font-size: 13px;
+    border-radius: 25%;
+}
+
+.shopcar_new .triangle {
+    position: absolute;
+    bottom: -6px;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 3px 0 3px;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.commodity {
+    background-color: aquamarine;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 auto;
+}
+
+.commodity_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.commodity_list a {
+    color: rgb(109, 105, 105);
+}
+
+.commodity_list li:not(:last-child)::after {
+    content: "|";
+    padding: 0 24px 0 24px;
+}
+
+
+/* special offer countdown.SlideshowPic. */
+
+.SOCSP {
+    height: 200px;
+    display: flex;
+}
+
+.SOC {
+    display: flex;
+    height: 200px;
+    width: 400px;
+    background-color: skyblue;
+}
+
+div[class^="soc_list"] {
+    height: 180px;
+    width: 185px;
+    background-color: #fff;
+    margin: 10px 10px 10px 10px;
+}
+
+div .soc_list2 {
+    margin: 10px 10px 10px 0;
+}
+
+
+/* .soc_list2 {
+    height: 180px;
+    width: 185px;
+    background-color: #fff;
+    margin: 10px 10px 10px 0;
+} */
+
+.soclist_banner {
+    padding-top: 12px;
+    padding-left: 3px;
+    width: 185px;
+    height: 50px;
+    background-color: pink;
+}
+
+.soclist_img {
+    width: 100px;
+    float: left;
+}
+
+.soclist_text {
+    padding: 15px;
+}
+
+.soclist_text span {
+    display: block;
+    margin-top: 3px;
+    padding-left: 80px;
+    color: rgb(201, 99, 99);
+    font-weight: 900;
+}
+
+.SP {
+    position: relative;
+    height: 200px;
+    width: 700px;
+    background-color: orange;
+}
+
+
+/* Special countdown */
+
+.text {
+    width: 260px;
+    text-align: center;
+    padding: 1px 2px;
+    background-color: rgb(204, 135, 8);
+    font-weight: 600;
+}
+
+.otime span {
+    display: inline-block;
+    color: #fff;
+}
+
+
+/* carousel */
+
+a {
+    color: #fff;
+}
+
+.big-box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 700px;
+    height: 200px;
+    background-color: pink;
+    /* z-index: 1; */
+}
+
+
+/* ul是要左右移動的動畫 */
+
+.bin-box ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 600%; */
+}
+
+.wrap {
+    position: relative;
+    top: 0;
+    left: 0px;
+    overflow: hidden;
+    width: 700px;
+    height: 200px;
+}
+
+.img-list {
+    position: absolute;
+    width: 3500px;
+    height: 200px;
+    /* background-color: rgb(91, 206, 87); */
+}
+
+.img-list>li {
+    float: left;
+}
+
+.img-list>li>img {
+    width: 700px;
+}
+
+.link {
+    position: absolute;
+    top: 180px;
+    left: 47%;
+}
+
+.link>li {
+    float: left;
+}
+
+.left-f {
+    position: absolute;
+    top: 85px;
+    left: 30px;
+    /* 先隱藏 */
+    display: none;
+}
+
+.right-f {
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    /* 先隱藏 */
+    display: none;
+}
+
+.current {
+    color: rgb(177, 170, 170);
+}
+
+
+/* 4.Categories */
+
+.nav {
+    float: left;
+    width: 210px;
+}
+
+.dropdown {
+    width: 210px;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color: rgb(216, 215, 208);
+    background-color: rgb(253, 255, 127);
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+}
+
+.dropdown .dd {
+    width: 210px;
+    height: 465px;
+    background-color: #95bd28;
+    padding-top: 25px;
+}
+
+.dropdown .dd ul li {
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding-left: 5px;
+    padding-bottom: 35px;
+    color: #fff;
+}
+
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color: #fff;
+    padding-left: 15px;
+}
+
+.dropdown .dd ul li:hover a {
+    color: #95bd28;
+}
+
+
+/* tab_item centerarea*/
+
+.ListCategories {
+    float: left;
+    width: 690px;
+    background-color: rgb(173, 208, 209);
+}
+
+.tab_menu ul {
+    display: flex;
+    height: 45px;
+    background-color: rgb(173, 182, 224);
+    cursor: pointer;
+}
+
+.tab_menu ul li {
+    width: 145px;
+    padding: 10px 5px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.tab_menu ul li span {
+    cursor: pointer;
+}
+
+.liactive {
+    background-color: rgb(192, 218, 219);
+}
+
+.tabscon section {
+    height: 465px;
+    display: none;
+    padding: 10px;
+}
+
+.tabscon .conactive {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabscon .conactive div {
+    width: 212px;
+    height: 200px;
+    padding: 40px 10px;
+    padding-right: 0;
+    margin: 5px;
+    margin-top: 10px;
+    background-color: rgb(190, 223, 71);
+    border: 1px solid rgb(228, 224, 224);
+}
+
+.tabscon .conactive div:hover {
+    transform: translate(3px, -3px);
+}
+
+.tabscon .conactive div img {
+    float: left;
+    width: 100px;
+    height: 110px;
+    /* background-color: #fff; */
+    display: block;
+    padding-left: 5px;
+    margin-right: 5px;
+    background-image: url("../images/商品圖df.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tabscon .conactive div h6 {
+    margin: 5px;
+    font-size: 15px;
+    padding-left: 5px;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+}
+
+.tabscon .conactive div h6:nth-child(3) {
+    font-size: 8px;
+    color: rgb(15, 15, 15);
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.tabscon .conactive div p {
+    font-size: 16px;
+    padding-left: 15px;
+    font-weight: 600;
+    color: rgb(173, 66, 66);
+    margin-bottom: 1px;
+}
+
+
+/* commodityright */
+
+.commodityright {
+    float: left;
+    background-color: rgb(230, 208, 84);
+    width: 200px;
+    height: 510px;
+}
+
+.commodityright_list {
+    width: 180px;
+    height: 240px;
+    background-color: #fff;
+    margin: 10px;
+}
+
+.commodityright_list_top {
+    /* background-color: darkorchid; */
+    border-bottom: 1px solid rgb(224, 220, 220);
+}
+
+.commodityright_list h4 {
+    display: inline-block;
+    margin: 15px;
+}
+
+.more a {
+    color: black;
+    font-size: 10px;
+}
+
+.commodityright_list_button ul {
+    margin-top: 5px;
+}
+
+.commodityright_list_button ul li {
+    padding: 8px 5px;
+    padding-left: 15px;
+}
+
+.commodityright_list_button ul li a {
+    color: rgb(53, 52, 52);
+}
+
+.commodityright_list_button ul li a span {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.commodityright_list_button ul li a span:last-child {
+    padding-left: 5px;
+    font-size: 8px;
+    font-weight: 300;
+    color: rgb(53, 52, 52);
+}
+
+
+/* second */
+
+.commodityright_list:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6px;
+    padding-left: 6px;
+    text-align: center;
+}
+
+.commodityright_list:nth-child(2) div {
+    width: 51px;
+    height: 51px;
+    background-color: rgb(181, 184, 8);
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.commodityright_list:nth-child(2) div a img {
+    width: 51px;
+    height: 51px;
+}
+
+.commodityright_list:nth-child(2) div:last-child {
+    width: 200px;
+    height: 115px;
+    background-color: rgb(181, 184, 8);
+}
+
+.commodityright_list:nth-child(2) div:last-child img {
+    width: 100%;
+    height: 115px;
+}
+
+.dropdown .dd li {
+    position: relative;
+}
+
+.dropdown_dd_li_right {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -300px;
+    z-index: 3px;
+    width: 300px;
+    background-color: #fff;
+    padding: 3px 20px;
+    color: rgb(192, 218, 219);
+    border: 1px solid rgb(192, 218, 219);
+}
+
+
+/* footer */
+
+footer {
+    width: 1100px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.about {
+    width: 700px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 55px;
+    /* background-color: gold; */
+}
+
+.copyright {
+    text-align: center;
+}
+
+.about ul {
+    display: flex;
+}
+
+.about ul li {
+    margin-right: 30px;
+    width: 90px;
+}
+
+.about ul li dt {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.about ul li dd {
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.QRcodePR {
+    position: relative;
+}
+
+.about ul li dd img {
+    width: 200px;
+    position: absolute;
+    top: -65px;
+    left: -70px;
+}
+
+.copyright {
+    margin-top: 15px;
+    padding-bottom: 80px;
+}
+
+
+/* shoppage_area */
+
+.shoplist {
+    padding-left: 100px;
+    background-color: rgb(120, 151, 209);
+}
+
+.shoplist a:hover {
+    color: rgb(224, 191, 4);
+}

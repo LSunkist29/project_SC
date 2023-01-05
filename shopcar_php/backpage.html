@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function add() {
+        var arr1 = [
+            "鍵盤",
+            "喇叭",
+            "耳機",
+            "麥克風",
+            "線材",
+            "延長線",
+            "USBHUB",
+            "週邊",
+            "充電",
+            "電池"
+        ];
+        var arr2 = [
+            1090,
+            2399,
+            2399,
+            2100,
+            39,
+            39,
+            399,
+            510,
+            365,
+            299
+        ];
+        var nameEm = document.getElementById('name');
+        var priceEm = document.getElementById('price');
+        var buttonId = document.getElementById('buttonId');
+        for (var i = 0; i < arr1.length; i++) {
+            nameEm.value = arr1[i];
+            priceEm.value = arr2[i];
+            buttonId.submit();
+        }
+    }
+</script>
+
+<body>
+    <form action="backpage.php" method="post">
+        <table>
+            <h3>輸入商品資料</h3>
+            <tr>
+                <td>商品名稱</td>
+                <td><input id="name" type="text" name="name" value=""></td>
+            </tr>
+            <tr>
+                <td>價格</td>
+                <td><input id="price" type="text" name="price" value=""></td>
+            </tr>
+            <!-- <tr>
+                <td>簡介</td>
+                <td><input type="text" name="introduce" value=""></td>
+            </tr> -->
+        </table>
+        <button id="buttonId" type="submit">確定</button>
+        <div><a href="backpage.php">點我</a></div>
+    </form>
+</body>
+
+</html>

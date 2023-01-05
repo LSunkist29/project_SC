@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/shop_page_style.css">
+    <script src="../js/shop_page_js.js"></script>
+</head>
+
+<body>
+    <!-- 1 -->
+
+    <body>
+        <!-- 1.logo search login register shopcar -->
+        <header class="header w">
+            <!-- logo_area -->
+            <div class="logo">
+                <h1>
+                    <a href="index.html" title="網站名稱">網站名稱</a>
+                </h1>
+            </div>
+            <!-- serch_area -->
+            <div class="search">
+                <input type="search" name="" id="" placeholder="搜尋商品">
+                <div class="search_button"><span></span></div>
+            </div>
+            <!-- usertools_area -->
+            <div class="usertools">
+                <ul class="usertools_list">
+                    <li><a href="#">登入</a></li>
+                    <li><a href="#">註冊</a></li>
+                    <li onclick="shopcar_show();"><a href="#">購物車<span></span></a></li>
+                    <div class="in_shopcar" id="in_shopcar_id">
+                        <div>
+                            <h3>購物車清單</h3>
+                        </div>
+                        <hr>
+                        <div id="in_shopcar_content"></div>
+                        <hr>
+                        <div>總額:
+                            <span id="shopcar_sound">0</span>
+                            <span>元</span>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="clear_float"></div>
+        </header>
+        <!-- 2.commodity_list -->
+        <div class="commodity w">
+            <ul class="commodity_list">
+                <li>3C</li>
+                <li>週邊</li>
+                <li>NB</li>
+                <li>通訊</li>
+                <li>數位</li>
+                <li>家電</li>
+                <li>日用</li>
+                <li>食品</li>
+                <li>生活</li>
+            </ul>
+        </div>
+        <!-- 2 -->
+        <div class="w box">
+            <div class="left_img">
+                123<img src="#" alt="">
+            </div>
+            <div class="right_text">
+                <h1 id="commodity_name">餐邊櫃</h1>
+                <h1 id="commodity_Price">$1999</h1>
+                <h5>數量</h5>
+                <div class="right_text_list_inline_block">
+                    <div onclick="add();">+</div>
+                    <div><input id="commodity_quantity" type="text" value="1"></div>
+                    <div onclick="minus();">-</div>
+                </div>
+                <button onclick="pull_in_shopcar();">放入購物車</button><button onclick="the_shoped();">立即購買</button>
+            </div>
+        </div>
+    </body>
+
+</html>

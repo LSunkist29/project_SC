@@ -1,0 +1,40 @@
+
+ 商品頁面 選擇 加上購物車
+ 列表
+ 購物車計算總額顯示
+ 給資料庫的資料
+ 送出
+ 給資料庫的資料
+ 交易成功顯示
+ 資料庫規劃 使用者名字 密碼 買什麼東西放另一個 關聯性
+ 使用者買什麼東西
+==========================================================
+ ajax 
+ 架伺服器
+ 網址:http://127.0.0.1/網頁檔案
+ http://127.0.0.1/page.htm
+------------------------------------------------------
+//js原生的做ajax XMLHttpRequest物件專門用來和伺服器做連線
+function getData(pageName){
+	var req=new XMLHttpRequest();
+	//取得資料的網址
+	//req.open("get","http://127.0.0.1/popular.htm");更改可替換網頁
+	req.open("get","http://127.0.0.1/"+pageName);
+	//觸發load事件
+	req.onload=function(){//load事件，偵測連線的狀態結果
+		//連線完成，做連線後的處理
+		//alert(this.responseText);//取得連線的文字
+		var content=document.getElementById("content");
+		content.innerHTML=this.responseText;
+	};
+	req.send();//送出連線
+}
+<body onload="getData('popular.htm')">//默認載入資料
+ <div>
+ 	<span onclick="getData('popular.htm');"> 熱門</span>
+	<span onclick="getData('latest.htm');"> 最新</span>
+ </div>
+ <hr>
+ <div id="content"></div>
+ </body>
+ //點擊熱門取得資料

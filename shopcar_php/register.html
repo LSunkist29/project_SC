@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>會員註冊</title>
+    <script>
+        function validateForm() {
+            var x = document.forms["registerForm"]["password"].value;
+            var y = document.forms["registerForm"]["password_check"].value;
+            if (x.length < 6) {
+                alert("密碼長度不足");
+                return false;
+            }
+            if (x != y) {
+                alert("請確認密碼是否輸入正確");
+                return false;
+            }
+        }
+
+        function checkinput() {
+            var registername = document.getElementById("registername");
+            var registername_vlaue = registername.value;
+            if (registername_vlaue == "") {
+                alert("註冊名字不能空白");
+            }
+            var reg = /[0-9]|[A-z]/i;
+
+            if (!reg.test(registername_vlaue)) {
+                alert("請輸入英文加數字的註冊名字")
+                registername.value = "";
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+    <div class="wrap">
+        <div class="wrap_flex">
+            <h6>MKshopWeb</h6>
+            <h2>註冊頁面</h2>
+        </div>
+
+        <form name="registerForm" method="post" action="register.php" onsubmit="validateForm()">
+            <table>
+                <tr>
+                    <td>帳 號：</td>
+                    <td> <input id="registername" type="text" name="username" autocomplete="off" required onkeyup="checkinput();"><span class="ok"><img src="../images/check.png" class="pic"></span></td>
+                </tr>
+                <tr>
+                    <td>密 碼：</td>
+                    <td><input id="password" type="password" name="password" autocomplete="off" required onkeyup="validate();"><span class="ok"><img src="../images/check.png" class="pic"></span></td>
+                </tr>
+                <tr>
+                    <td>確認密碼：</td>
+                    <td><input type="password" name="password_check" id="password_check" required onkeyup="validate();"><span class="ok"><img src="../images/check.png" class="pic"></span><span id="thishi"></span></td>
+                </tr>
+                <tr class="inpug_padding_left">
+                    <td><input type="submit" value="註冊" name="submit" id="submit" disabled="true"></td>
+                    <td><input type="reset" value="重設" name="submit"></td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <td><a href="../index.php">回首頁</a></td>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+    
+    a {
+        color: orange;
+    }
+    
+    .wrap {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    
+    .wrap_flex {
+        display: flex;
+    }
+    
+    .wrap h2 {
+        display: inline-block;
+        padding-left: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .wrap h6 {
+        display: inline;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        font-size: 5px;
+        color: rgb(234, 126, 18);
+    }
+    
+    input {
+        outline: none;
+    }
+    
+    input[type="submit"] {
+        width: 80px;
+        height: 25px;
+    }
+    
+    table,
+    td {
+        /* border: 1px solid; */
+    }
+    
+    td {
+        width: 300px;
+        height: 50px;
+    }
+    
+    .inpug_padding_left {
+        text-align: left;
+    }
+    
+    .block {
+        /* width:10px; */
+    }
+    
+    .f_login_input_submit {
+        text-align: right;
+        height: 60px;
+    }
+    
+    .wrap tr:last-child {
+        font-weight: 900;
+        /* padding-left:10px; */
+    }
+    /*驗証部分*/
+    
+    form>.ok {
+        color: #008800;
+    }
+    /* 如果input的驗証成功valid+正後方 */
+    
+    form input:valid+.ok {
+        display: inline;
+    }
+    
+    form input:invalid+.ok {
+        display: none;
+    }
+    
+    .pic {
+        /* background-image: url("../images/check.png"); */
+        /* background-image: url("check.png"); */
+        width: 15px;
+    }
+</style>
+<script>
+    function validate() {
+        // alert("funok");
+        var pw1 = document.getElementById("password").value;
+        var pw2 = document.getElementById("password_check").value;
+        var a = document.getElementById("thishi");
+        var b = document.getElementById("submit");
+        if (pw1 == pw2) {
+            a.innerText = "輸入密碼相同";
+            b.disabled = false;
+            // alert(a + b);
+        } else {
+            document.getElementById("thishi").innerText = "  密碼不相同";
+            document.getElementById("submit").disabled = true;
+        }
+    }
+</script>
+
+</html>
