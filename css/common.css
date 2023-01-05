@@ -684,3 +684,7 @@ footer {
 .shoplist a:hover {
     color: rgb(224, 191, 4);
 }
+
+.list_ul {
+    position: absolute;
+}

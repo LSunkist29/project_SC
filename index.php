@@ -110,7 +110,17 @@ require_once('shopcar_php/config.php');
     <script src="jquery.js"></script>
     
 </head>
-
+<style>
+    .list_style{
+        display:none;
+        position: absolute;
+        top:35px;
+        left:-30px;
+        width:80px;
+        background:rgb(149, 234, 205);
+        text-align:center;
+    }
+</style>
 <body>
     <!-- 1 -->
 
@@ -229,19 +239,55 @@ require_once('shopcar_php/config.php');
         </header>
         <!-- 2.commodity_list -->
         <div class="commodity w">
-            <ul class="commodity_list ">
-
-                <li><a href="#" title="3C">3C</a></li>
-                <li><a href="#" title="週邊">週邊</a></li>
-                <li><a href="#" title="NB">NB</a></li>
-                <li><a href="#" title="通訊">通訊</a></li>
-                <li><a href="#" title="數位">數位</a></li>
-                <li><a href="#" title="家電">家電</a></li>
-                <li><a href="#" title="日用">日用</a></li>
-                <li><a href="#" title="食品">食品</a></li>
-                <li><a href="#" title="生活">生活</a></li>
+            <ul id="commodity_list" class="commodity_list">
+                <li style="position: relative;"><a href="#" title="3C">3C</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=522" onclick="<?php $_SESSION['shopid']="522";?>">液晶螢幕</a></dd>
+                    <dd><a href="?p=shop&id=523" onclick="<?php $_SESSION['shopid']="523";?>">硬碟</a></dd>
+                    <dd><a href="?p=shop&id=524" onclick="<?php $_SESSION['shopid']="524";?>">記憶體</a></dd>
+                </dl></li>
+                <li style="position: relative;"><a href="#" title="週邊">週邊</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=525" onclick="<?php $_SESSION['shopid']="525";?>">滑鼠</a></dd>
+                    <dd><a href="?p=shop&id=526" onclick="<?php $_SESSION['shopid']="526";?>">鍵盤</a></dd>
+                    <dd><a href="?p=shop&id=527" onclick="<?php $_SESSION['shopid']="527";?>">喇叭</a></dd>
+                </dl></li>
+                <li style="position: relative;"><a href="#" title="NB">NB   </a><dl class="list_style">
+                    <dd><a href="?p=shop&id=501" onclick="<?php $_SESSION['shopid']="501";?>">筆記型電腦</a></dd>
+                    <dd><a href="?p=shop&id=502" onclick="<?php $_SESSION['shopid']="502";?>">商用筆記</a></dd>
+                    <dd><a href="?p=shop&id=503" onclick="<?php $_SESSION['shopid']="503";?>">電競筆記</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="通訊">通訊</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=504" onclick="<?php $_SESSION['shopid']="504";?>">手機</a></dd>
+                    <dd><a href="?p=shop&id=505" onclick="<?php $_SESSION['shopid']="505";?>">行動電源</a></dd>
+                    <dd><a href="?p=shop&id=506" onclick="<?php $_SESSION['shopid']="506";?>">耳機</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="數位">數位</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=507" onclick="<?php $_SESSION['shopid']="507";?>">電玩</a></dd>
+                    <dd><a href="?p=shop&id=508" onclick="<?php $_SESSION['shopid']="508";?>">攝影</a></dd>
+                    <dd><a href="?p=shop&id=509" onclick="<?php $_SESSION['shopid']="509";?>">音訊</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="家電">家電</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=510" onclick="<?php $_SESSION['shopid']="510";?>">電視</a></dd>
+                    <dd><a href="?p=shop&id=511" onclick="<?php $_SESSION['shopid']="511";?>">廚房家電</a></dd>
+                    <dd><a href="?p=shop&id=512" onclick="<?php $_SESSION['shopid']="512";?>">冷暖空調</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="日用">日用</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=513" onclick="<?php $_SESSION['shopid']="513";?>">衛生紙</a></dd>
+                    <dd><a href="?p=shop&id=514" onclick="<?php $_SESSION['shopid']="514";?>">家用清潔</a></dd>
+                    <dd><a href="?p=shop&id=515" onclick="<?php $_SESSION['shopid']="515";?>">天然有機</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="食品">食品</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=516" onclick="<?php $_SESSION['shopid']="516";?>">食材</a></dd>
+                    <dd><a href="?p=shop&id=517" onclick="<?php $_SESSION['shopid']="517";?>">熟食</a></dd>
+                    <dd><a href="?p=shop&id=518" onclick="<?php $_SESSION['shopid']="518";?>">飲料</a></dd>
+                </dl></li>
+                <li  style="position: relative;"><a href="#" title="生活">生活</a><dl class="list_style">
+                    <dd><a href="?p=shop&id=519" onclick="<?php $_SESSION['shopid']="519";?>">餐廚</a></dd>
+                    <dd><a href="?p=shop&id=520" onclick="<?php $_SESSION['shopid']="520";?>">寢具</a></dd>
+                    <dd><a href="?p=shop&id=521" onclick="<?php $_SESSION['shopid']="521";?>">修繕</a></dd>
+                </dl></li>
             </ul>
         </div>
+        <div>
         <!-- shop_content_area -->
         <!-- <div class="shoplist w">
             <span><a href="index.php">>>>返回首頁</a></span>
@@ -904,6 +950,20 @@ require_once('shopcar_php/config.php');
     </body>
 
     <script>
+
+    //獲取全部
+    var nav=document.querySelector(".commodity_list")
+    //獲取小li
+    var list=nav.children;
+    for(var i=0;i<list.length;i++){
+        //綁定事件
+        list[i].onmouseover=function(){
+            this.children[1].style.display='block';
+        }
+        list[i].onmouseout=function(){
+            this.children[1].style.display='none';
+        }
+    }
         var out = true;
 
         // function out() {

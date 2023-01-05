@@ -7,6 +7,7 @@ $conn=require_once "config.php";
 // Define variables and initialize with empty values
 $username=$_POST["username"];
 $password=$_POST["password"];
+// $password=md5($_POST["password"]);
 //增加hash可以提高安全性
 $password_hash=password_hash($password,PASSWORD_DEFAULT);
 // Processing form data when form is submitted
