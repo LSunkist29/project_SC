@@ -18,10 +18,12 @@ if(isset($_SESSION["username"])){
     $content=str_replace("刪除","","$content1");
     // $content= substr($content,1);
     // echo "$content";
-    $sound=$_POST["sound_value"];
+    // $sound=$_POST["sound_value"];
     // $username1=$_POST["username"];
 
-    $shoplist="$content"."總共 "."$sound"."元";
+    // $shoplist="$content"."總共 "."$sound"."元";
+    $shoplist=$content;
+
     echo "$shoplist";
     $username=$_SESSION["username"];
     // echo "$sessionvalue";

@@ -39,6 +39,7 @@ require_once('shopcar_php/get_commodityId.php');
     }
     .logo {
     position: absolute;
+    background-color:pink;
     top: 25px;
     width: 171px;
     height: 61px;
@@ -81,7 +82,7 @@ require_once('shopcar_php/get_commodityId.php');
                     <li id="loginfasle" class="login_regi"><a href="shopcar_php/index_login.php">登入</a></li>
                     <li id="registerfasle" class="login_regi"><a href="shopcar_php/register.html">註冊</a></li>
                     <li class="newbox" onclick="shopcar_show('block');"><a href="javascript:;">購物車<span></span></a>
-                    <div class="shopcar_new" id="shopcar_new">new<span class="triangle"></span></div>
+                    <div class="shopcar_new" id="shopcar_new" style="display:<?php echo $_SESSION['stand'];?>">new<span class="triangle"></span></div>
                     </li>
                     <form action="shopcar_php/settlement_query.php" method="post">
                         <div class="in_shopcar" id="in_shopcar_id">
@@ -106,6 +107,8 @@ require_once('shopcar_php/get_commodityId.php');
                                         // 每跑一次迴圈就抓一筆值，最後放進data陣列中
                                         $datas1[] = $row1;
                                     }
+                                }else{
+                                    $_SESSION['stand']=false;
                                 }
                                 // 釋放資料庫查到的記憶體
                                 mysqli_free_result($result1);
@@ -124,21 +127,27 @@ require_once('shopcar_php/get_commodityId.php');
                                 }
 
                                 }
-        
+                                
                                 mysqli_close($link);
                                 ?>
+                                
                                 <div>
                                 <!-- <h3>foreach列出查詢結果</h3> -->
                                 <div>
                                 <?php if(!empty($datas1)): ?>
+                                    <?php $_SESSION["sult"]=0;?>
                                 <ul id="data_all_h5">
+                                <?php $sum=0?>
                                 <!-- 資料 as key(下標) => row(資料的row) -->
                                 <?php foreach ($datas1 as $key1 => $row1) :?>
                                 <li id="data_all_h5">
                                 <!-- 第<?php echo($key1 +1 ); ?> 筆資料， -->
                                 <h5 class="text_sytle"><?php echo $row1['commodityName'].$row1['commodityPrice']."*".$row1['count']."="?><i><?php echo $row1['total'];?></i><i>元</i><a href="./shopcar_php/del_list.php?id=<?php echo $row1['id'];?>">刪除</a></h5>
+
+                                <?php $sum += $row1['total'];?>
                                 </li>
                                 <?php endforeach; ?>
+                                <li><?php echo '總共'.$sum.'元';?></li>
                                 </ul>
                                 <?php else:  ?>
                                 查無資料
@@ -153,11 +162,11 @@ require_once('shopcar_php/get_commodityId.php');
                             </div>
                             <input type="hidden" name="content_value" id="in_shopcar_content_input" value="">
                             <hr>
-                            <div>總額:
-                                <span id="shopcar_sound">0</span>
+                            <!-- <div>總額:
+                                <span id="shopcar_sound"><?php echo $sum=0;?></span>
                                 <input type="hidden" name="sound_value" id="shopcar_sound_input" value="">
                                 <span>元</span>
-                            </div>
+                            </div> -->
                             <input type="hidden" name="username1" value="" id="username1">
                             <button id="countpush" onclick="shopcar_count();" type="submit">結算</button>
                             <!-- <div onclick="shopcar_count();">點me</div> -->
@@ -875,8 +884,8 @@ require_once('shopcar_php/get_commodityId.php');
                 <input id="inputswitch" type="hidden" name="switch" value="2">
                 <button class="shopstyle" type="submit" onclick="nowbuy2();">立即購買</button>
                 </from>
-                
             </div>
+            
         </div>
         <?php else:?>
             <!-- <h1>查無此網頁</h1> -->
@@ -913,11 +922,6 @@ require_once('shopcar_php/get_commodityId.php');
                 $('.login_regi').show();
                 $('.userarea').hide();
                 $.getJSON("shopcar_php/getSession.php", function(data) {
-                    // $data = JSON.stringify(data);
-                    // $.each(data.items, function(i, item) {
-                    // alert("jQuery拿到的:" + data);
-                    //     console.log(data);
-                    // });
                     if (data[0]) {
                         $('.userarea').show();
                         $('.login_regi').hide();

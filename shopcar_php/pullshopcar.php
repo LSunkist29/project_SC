@@ -32,6 +32,7 @@ if(isset($_SESSION["username"])){
         $result = mysqli_query($link,$sql);
         if($result){
             echo "已將商品放至購物車";
+            $_SESSION["stand"]="block";
         }else{echo "放入購物車交易未完成";}
     
     

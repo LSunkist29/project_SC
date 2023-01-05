@@ -212,6 +212,8 @@ function shopcar_count() {
             console.log(str);
 
         }
+    }else{
+        in_shopcar_content_input.value=shopcar_sound.value;
     }
 
     //加總

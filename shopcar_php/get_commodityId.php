@@ -68,7 +68,7 @@ if ($result) {
         // echo "<hr>";
         // echo "為你顯示網站商品"."<br>";
         foreach($datas as $datass){
-                    // echo $datass["id"]."產品名稱:".$datass["commodityname"]."/價格:".$datass["commodityPrice"]."元"."/簡介:".$datass["commodityintroduce"]."<br>";
+                    echo $datass["id"]."產品名稱:".$datass["commodityname"]."/價格:".$datass["commodityPrice"]."元"."/簡介:".$datass["commodityintroduce"]."<br>";
         }
     }
 }else{
