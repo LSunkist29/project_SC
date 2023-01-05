@@ -197,6 +197,13 @@ span {
 }
 
 
+/* con_a */
+
+a {
+    color: #fff;
+}
+
+
 /* special offer countdown.SlideshowPic. */
 
 .SOCSP {
@@ -220,6 +227,11 @@ div[class^="soc_list"] {
 
 div .soc_list2 {
     margin: 10px 10px 10px 0;
+}
+
+#cf_a_hover1,
+#cf_a_hover1:hover {
+    color: black !important;
 }
 
 
@@ -280,10 +292,6 @@ div .soc_list2 {
 
 
 /* carousel */
-
-a {
-    color: #fff;
-}
 
 .big-box {
     position: absolute;

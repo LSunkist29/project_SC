@@ -1,108 +1,14 @@
-<?php 
-
-session_start();
-// $_SESSION['nowbuy']=false;
-$_SESSION['id']=0;
-
-$p="index";
-$id=1;
-
-if(isset($_GET['p'])){
-    $p = $_GET['p'];
-    $id=$_GET['id'];
-}
-
+<?php
 require_once('shopcar_php/config.php');
-   
-    $sql="SELECT * FROM `commoditys` WHERE `id` = '$id'";
-    $result = mysqli_query($link,$sql);
-    // echo $result;
-    // print_r($result);
-    // echo $result;
-    if ($result) {
-        // mysqli_num_rows方法可以回傳我們結果總共有幾筆資料
-        if (mysqli_num_rows($result)>0) {
-            // 取得大於0代表有資料
-            // while迴圈會根據資料數量，決定跑的次數
-            // mysqli_fetch_assoc方法可取得一筆值
-            while ($row = mysqli_fetch_assoc($result)) {
-                // 每跑一次迴圈就抓一筆值，最後放進data陣列中
-                $datas[] = $row;
-            }
-            // echo "你查找的商品!!:".$datas."<br>";
-            // echo "<hr>";
-            // echo "為你顯示商品"."<br>";
-            foreach($datas as $datass){
-                //    echo $datass["id"]."產品名稱:".$datass["commodityname"]."/價格:".$datass["commodityPrice"]."元"."/簡介:".$datass["commodityintroduce"]."<br>";
-
-            }
-        }else{
-        // 釋放資料庫查到的記憶體
-        // mysqli_free_result($result);
-        // echo $datas;
-        // print_r($datas);
-        // $datas=json_encode($datas);
-        // foreach ($datas as $score) {
-        //     echo"$score";
-        // }
-       
-        // echo $datass[0]["id"]."產品名稱:".$datass[0]["commodityname"]."/價格:".$datass[0]["commodityPrice"]."元"."/簡介:".$datass[0]["commodityintroduce"];
-
-            $sql = "SELECT * FROM `commoditys` WHERE `id` = $id";
-            $result = mysqli_query($link,$sql);
-            if (mysqli_num_rows($result)>0) {
-                // 取得大於0代表有資料
-                // while迴圈會根據資料數量，決定跑的次數
-                // mysqli_fetch_assoc方法可取得一筆值
-                while ($row = mysqli_fetch_assoc($result)) {
-                    // 每跑一次迴圈就抓一筆值，最後放進data陣列中
-                    $datas[] = $row;
-                }
-            }
-        // 釋放資料庫查到的記憶體
-        // mysqli_free_result($result);
-        // echo $datas;
-        // print_r($datas);
-        // $datas=json_encode($datas);
-        // foreach ($datas as $score) {
-        //     echo"$score";
-        // }
-            // echo "你查找的商品??:".$datas."<br>";
-            // echo "查無此商品"."<br>";
-            // echo "<hr>";
-            // echo "為你顯示網站商品"."<br>";
-            foreach($datas as $datass){
-                        // echo $datass["id"]."產品名稱:".$datass["commodityname"]."/價格:".$datass["commodityPrice"]."元"."/簡介:".$datass["commodityintroduce"]."<br>";
-            }
-        }
-    }else{
-//     if($result){
-//         echo "交易完成";
-        echo "交易失敗 請登入會員";
-    }
-?>
-
-<?php 
-//  function delLIST(a){
-//     $id=a;
-//     $sql="DELETE FROM `pullshopcar` WHERE `id` = $id";
-
-//     $result = mysqli_query($link,$sql);
-  
-//     if ($result){
-//         echo "刪除成功";
-//     }else{
-//         echo "刪除失敗";
-//     }
-//  }
-?>
+require_once('shopcar_php/get_commodityId.php');
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MikannWeb購物網</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="shortcut icon" href="favicon.ico">
@@ -111,6 +17,8 @@ require_once('shopcar_php/config.php');
     
 </head>
 <style>
+    /* 選單下拉列表 */
+    /* 外部引用沒反應，寫在當前頁面*/
     .list_style{
         display:none;
         position: absolute;
@@ -119,24 +27,28 @@ require_once('shopcar_php/config.php');
         width:80px;
         background:rgb(149, 234, 205);
         text-align:center;
+        z-index:999;
     }
+    .cf_a_hover1,.cf_a_hover1:hover{
+        color:black;
+    }
+
 </style>
 <body>
     <!-- 1 -->
-
     <body>
         <!-- 1.logo search login register shopcar -->
         <header class="header w">
             <!-- logo_area -->
             <div class="logo">
                 <h1>
-                    <a href="index.php" title="網站名稱">網站名稱</a>
+                    <a href="index.php" title="mikannWebshop" >mikannWebshop</a>
                 </h1>
             </div>
             <!-- serch_area -->
             <div class="search">
                 <form action="shopcar_php/search_page.php" method="post">
-                    <input type="search" name="searchc" id="" placeholder="搜尋商品" onfocus="this.placeholder='';" onBlur="this.placeholder='搜尋商品';">
+                    <input type="search" name="searchc" id="" placeholder="搜尋商品" autocomplete=”off” onfocus="this.placeholder='';" onBlur="this.placeholder='搜尋商品';">
                     <button type="submit" class="search_button"><span></span></button>
                 </form>
             </div>
@@ -250,7 +162,7 @@ require_once('shopcar_php/config.php');
                     <dd><a href="?p=shop&id=526" onclick="<?php $_SESSION['shopid']="526";?>">鍵盤</a></dd>
                     <dd><a href="?p=shop&id=527" onclick="<?php $_SESSION['shopid']="527";?>">喇叭</a></dd>
                 </dl></li>
-                <li style="position: relative;"><a href="#" title="NB">NB   </a><dl class="list_style">
+                <li style="position: relative;"><a href="#" title="NB">NB</a><dl class="list_style">
                     <dd><a href="?p=shop&id=501" onclick="<?php $_SESSION['shopid']="501";?>">筆記型電腦</a></dd>
                     <dd><a href="?p=shop&id=502" onclick="<?php $_SESSION['shopid']="502";?>">商用筆記</a></dd>
                     <dd><a href="?p=shop&id=503" onclick="<?php $_SESSION['shopid']="503";?>">電競筆記</a></dd>
@@ -303,26 +215,33 @@ require_once('shopcar_php/config.php');
             <div class="SOCSP w">
                 <div class="SOC">
                     <div class="soc_list1" title="全自動咖啡機" style=" cursor: crosshair;">
+                    <a class="cf_a_hover1" href="?p=shop&id=601" onclick="<?php $_SESSION['shopid']="601";?>">
+
                         <div class="soclist_banner">限時特賣<span id="time" class="otime"></span></div>
                         <div class="soclist_img">
-                            <img src="images/倒數特賣1.png" alt="特賣">
+                            <img src="images/mikannimg.png" alt="特賣">
                         </div>
                         <div class="soclist_text">
                             <h6>全自動咖啡機</h6>
                             <h6>直覺式操作面板，一鍵享用咖啡</h6>
                             <span>$34900</span>
                         </div>
+                    </a>
                     </div>
+                    
                     <div class="soc_list2" title="仿手沖咖啡機" style=" cursor: crosshair;">
+                    <a class="cf_a_hover1" href="?p=shop&id=602" onclick="<?php $_SESSION['shopid']="602";?>">
+
                         <div class="soclist_banner">限時特賣<span id="time1" class="otime"></span></div>
                         <div class="soclist_img">
-                            <img src="images/倒數特賣2.png" alt="特賣">
+                            <img src="images/mikannimg.png" alt="特賣">
                         </div>
                         <div class="soclist_text">
                             <h6>自動仿手沖美式咖啡機</h6>
                             <h6>設定時間，自動沖煮</h6>
                             <span>$5990</span>
                         </div>
+                    </a>
                     </div>
                 </div>
                 <div class="SP">
